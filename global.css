@@ -89,3 +89,11 @@ background-color: #5B4693;
     border-radius: 10px;
     background-color: #84CAED;
 }
+.titulorepuestapagopdf{
+background-color: white !important;
+align-items: center;
+}
+
+.paginapdf{
+   margin-left: 250px !important;
+}

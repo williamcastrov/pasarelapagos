@@ -13,7 +13,7 @@ function ConsultTransactions(props) {
     const [itemUpdate, setItemUpdate] = useState([]);
     const fechaactual = Moment(new Date()).subtract(5, 'days');
     const fechacompara = Moment(fechaactual).format("YYYY-MM-DD HH:mm:ss");
-    console.log("FECHA : ", fechacompara)
+    //console.log("FECHA : ", fechacompara)
 
     useEffect(() => {
         const movimientos = async () => {

@@ -8,6 +8,8 @@ import { depto, tipodocumento, ciudad, paises } from "../constants/index.js";
 import shortid from "shortid";
 import axios from "axios";
 
+const referencia = shortid();
+
 function Wompi(props) {
     const [habilitarPagar, setHabilitarPagar] = useState(false);
     const [formData, setFormData] = useState(defaultValueForm());
@@ -47,8 +49,8 @@ function Wompi(props) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
         //console.log("DATOS FORM : ", formData);
+        localStorage.setItem('idtransaccion', JSON.stringify(referencia));
         setHabilitarPagar(true);
 
         /*
@@ -261,9 +263,9 @@ function Wompi(props) {
                                     <Form.Select
                                         className="form-control"
                                         name="valorpago"
-                                        prefix={'$ '}
+                                        //prefix={'$ '}
                                         onChange={(e) => valorimpuesto(e.target.value)}
-                                        thousandSeparator=","
+                                        //thousandSeparator=","
                                     >
                                         {listarPlanes &&
                                             listarPlanes.map(
@@ -328,9 +330,6 @@ function Wompi(props) {
                                 :
                                 null
                         }
-                        {
-                            console.log("ENVIAR VALOR : ", valPago)
-                        }
                     </div>
                 </div>
             </div>
@@ -357,24 +356,17 @@ function defaultValueForm() {
     }
 }
 
-
 function Pagar(props) {
+    const router = useRouter();
     const {
         valPago, valImpuesto, formData
-    } = props;
-
-    let referencia = shortid();
-
-    console.log("FORM DATA : ", formData)
+    } = props;  
 
     const regresar = () => {
-        alert("REGRESAR")
+        //alert("REGRESAR")
         //setShowModal(false);
-        //router.push("/");
+        router.push("/");
     }
-    /*
-value="pub_test_aT7zNLXdesTjtmi5uMUhrHIAUV9ia5sn"
-    */
 
     return (
         <div className="ps-page ps-page--inner">
@@ -383,9 +375,9 @@ value="pub_test_aT7zNLXdesTjtmi5uMUhrHIAUV9ia5sn"
                 <input type="hidden" name="currency" value="COP" />
                 <input type="hidden" name="amount-in-cents" value={valPago + "00"} />
                 <input type="hidden" name="reference" value={referencia} />
-                <input type="hidden" name="redirect-url" value="https://transaction-redirect.wompi.co/check" />
+                <input type="hidden" name="redirect-url" value="http://localhost:3000/transactionresponse" />
                 <input type="hidden" name="tax-in-cents:vat" value={valImpuesto + "00"} />
-                <input type="hidden" name="tax-in-cents:consumption" value={valImpuesto + "00"} />
+                <input type="hidden" name="tax-in-cents:consumption" value={"0" + "00"} />
                 <input type="hidden" name="customer-data:email" value={formData.email} />
                 <input type="hidden" name="customer-data:full-name" value={formData.nombres + " " + formData.apellidos} />
                 <input type="hidden" name="customer-data:phone-number" value={"+573155337803"} />
