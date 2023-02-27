@@ -1,0 +1,91 @@
+.fondoprincipal{
+    background-color: #63ABDD;
+}
+
+.texto {
+    color: white;
+    font-size: 18px;
+}
+
+.textomenu {
+    color: white;
+    font-size: 20px;
+}
+
+.margenwompi{
+    margin-top: 20px;
+}
+
+.tamanoconsultamvto{
+    width: 1500px;
+    margin-left: -100px;
+}
+
+.centrartexto{
+    text-align: center;
+}
+.mlmenos-10{
+    margin-left: -10px;
+}
+.ml-80{
+    margin-left: 80px;
+}
+.ml-90{
+    margin-left: 90px !important;
+}
+.ml-100{
+    margin-left: 100px !important;
+}
+.ml-200{
+    margin-left: 200px;
+}
+.ml-600{
+    margin-left: 450px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mt-80{
+    margin-top: 80px;
+}
+.mt-40{
+    margin-top: 40px;
+}
+
+.tamañoformulariodatoscliente{
+    width: 800px;
+}
+/* 7388C1 */
+.botonconfirmar{
+    margin-left: 120px;
+    color: black;
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #84CAED;
+}
+
+.botonconcancelar{
+    margin-left: 50px;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #6B62A1;
+}
+
+.colortextocomprar{
+    color: black;
+    font-size: 16px;
+}
+
+.colorbarra{
+background-color: #5B4693;
+}
+
+.botonpasarela{
+    width: 300px;
+    margin-left: -110px;
+    border-radius: 10px;
+    background-color: #84CAED;
+}
